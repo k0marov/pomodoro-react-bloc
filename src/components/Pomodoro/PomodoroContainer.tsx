@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
-import { State, Type, workDurationSec } from "../../domain/state/PomodoroBloc";
+import { restDurationSec, State, Type, workDurationSec } from "../../domain/state/PomodoroBloc";
 import Pomodoro from "./Pomodoro";
 
 function PomodoroContainer() {
-    const [state, setState] = useState(new State(Type.work, workDurationSec));
+    const [occupation, setOccupation] = useState(Type.work); 
+    const [secondsLeft, setSecondsLeft] = useState(workDurationSec); 
     useEffect(() => {
+        if (!secondsLeft) {
+            const newOccupation = occupation == Type.work ? Type.rest : Type.work;
+            setOccupation(newOccupation);
+            setSecondsLeft(newOccupation == Type.work ? workDurationSec : restDurationSec);
+            return;
+        }
         const intervalId = setTimeout(() => {
-            setState(new State(state.type, state.secondsLeft-1));
+            setSecondsLeft(secondsLeft-1);
         }, 1000);
         return () => clearInterval(intervalId);
-    }, [state]);
-    return <Pomodoro state={state}/>
+    }, [secondsLeft]);
+    return <Pomodoro state={new State(occupation, secondsLeft)}/>
 }
 
 export default PomodoroContainer; 
