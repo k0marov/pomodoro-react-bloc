@@ -3,13 +3,13 @@ import { restDurationSec, State, Type, workDurationSec } from "../../domain/stat
 import Pomodoro from "./Pomodoro";
 
 function PomodoroContainer() {
-    const [occupation, setOccupation] = useState(Type.work); 
+    const [activity, setActivity] = useState(Type.work); 
     const [secondsLeft, setSecondsLeft] = useState(workDurationSec); 
     useEffect(() => {
         if (!secondsLeft) {
-            const newOccupation = occupation == Type.work ? Type.rest : Type.work;
-            setOccupation(newOccupation);
-            setSecondsLeft(newOccupation == Type.work ? workDurationSec : restDurationSec);
+            const newActivity = activity == Type.work ? Type.rest : Type.work;
+            setActivity(newActivity);
+            setSecondsLeft(newActivity == Type.work ? workDurationSec : restDurationSec);
             return;
         }
         const intervalId = setTimeout(() => {
@@ -17,7 +17,7 @@ function PomodoroContainer() {
         }, 1000);
         return () => clearInterval(intervalId);
     }, [secondsLeft]);
-    return <Pomodoro state={new State(occupation, secondsLeft)}/>
+    return <Pomodoro state={new State(activity, secondsLeft)}/>
 }
 
 export default PomodoroContainer; 

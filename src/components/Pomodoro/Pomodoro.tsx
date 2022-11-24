@@ -1,12 +1,12 @@
-import { State } from "../../domain/state/PomodoroBloc";
+import { State, Type } from "../../domain/state/PomodoroBloc";
+import "./Pomodoro.css";
 
 interface Props {
     state: State,
 }
 function Pomodoro({state} : Props) {
     return (
-        <div>
-            <p>{state.type}</p>
+        <div className={state.type == Type.work ? "work" : "rest"} id="pomodoro">
             <p>{state.secondsLeft}</p>
         </div>
     );

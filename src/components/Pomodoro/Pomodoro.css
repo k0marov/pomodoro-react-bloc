@@ -1,0 +1,17 @@
+#pomodoro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px; 
+    width: 300px; 
+    border-radius: 50%;
+}
+
+.work {
+    background-color: red;
+}
+
+.rest {
+    background-color: green;
+}
