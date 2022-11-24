@@ -6,6 +6,7 @@ function PomodoroContainer() {
     const [activity, setActivity] = useState(PomodoroActivity.work); 
     const [isPaused, setIsPaused] = useState(false);
     const [secondsLeft, setSecondsLeft] = useState(workDurationSec); 
+    const [iterations, setIterations] = useState(0);
 
     const handleClick = () => setIsPaused(!isPaused);
 
@@ -15,6 +16,9 @@ function PomodoroContainer() {
             const newActivity = activity == PomodoroActivity.work ? PomodoroActivity.rest : PomodoroActivity.work;
             setActivity(newActivity);
             setSecondsLeft(newActivity == PomodoroActivity.work ? workDurationSec : restDurationSec);
+            if (newActivity == PomodoroActivity.work) {
+                setIterations(iterations+1);
+            }
             return;
         }
         const intervalId = setTimeout(() => {
@@ -26,7 +30,7 @@ function PomodoroContainer() {
 
 
 
-    return <Pomodoro onClick={handleClick} state={new PomodoroState(activity, secondsLeft, isPaused)}/>
+    return <Pomodoro onClick={handleClick} state={new PomodoroState(activity, secondsLeft, isPaused, iterations)}/>
 }
 
 export default PomodoroContainer; 

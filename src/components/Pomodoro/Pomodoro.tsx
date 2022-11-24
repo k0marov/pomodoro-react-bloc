@@ -12,6 +12,7 @@ function Pomodoro({state, onClick} : Props) {
 
         <div onClick={onClick} className={className} id="pomodoro">
             <p>{state.secondsLeft}</p>
+            <p>{state.iterations} Iterations</p>
         </div>
     );
 }

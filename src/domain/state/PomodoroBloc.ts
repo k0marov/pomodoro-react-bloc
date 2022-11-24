@@ -11,6 +11,7 @@ export class PomodoroState {
         readonly type: PomodoroActivity, 
         readonly secondsLeft: number,
         readonly isPaused: boolean,
+        readonly iterations: number,
     ) {}
 }
 
