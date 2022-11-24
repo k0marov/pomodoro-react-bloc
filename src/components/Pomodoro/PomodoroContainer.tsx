@@ -10,6 +10,7 @@ function PomodoroContainer() {
     const handleClick = () => setIsPaused(!isPaused);
 
     useEffect(() => {
+        if (isPaused) return; 
         if (!secondsLeft) {
             const newActivity = activity == PomodoroActivity.work ? PomodoroActivity.rest : PomodoroActivity.work;
             setActivity(newActivity);
@@ -20,7 +21,7 @@ function PomodoroContainer() {
             setSecondsLeft(secondsLeft-1);
         }, 1000);
         return () => clearInterval(intervalId);
-    }, [secondsLeft]);
+    }, [secondsLeft, isPaused]);
 
 
 
