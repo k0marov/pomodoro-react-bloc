@@ -1,4 +1,4 @@
-import { PomodoroState, PomodoroActivity } from "../../domain/state/PomodoroBloc";
+import { PomodoroState, PomodoroActivity } from "../../../domain/state/PomodoroBloc";
 import "./Pomodoro.css";
 
 interface Props {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { restDurationSec, PomodoroState, PomodoroActivity, workDurationSec } from "../../domain/state/PomodoroBloc";
+import { restDurationSec, PomodoroState, PomodoroActivity, workDurationSec } from "../../../domain/state/PomodoroBloc";
 import Pomodoro from "./Pomodoro";
 
 function PomodoroContainer() {

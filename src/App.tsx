@@ -1,5 +1,5 @@
 import React from 'react';
-import PomodoroContainer from './components/Pomodoro/PomodoroContainer';
+import PomodoroContainer from './delivery/components/Pomodoro/PomodoroContainer';
 
 function App() {
   return (
