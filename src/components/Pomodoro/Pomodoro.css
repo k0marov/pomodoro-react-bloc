@@ -15,3 +15,7 @@
 .rest {
     background-color: green;
 }
+
+.paused {
+    background-color: grey ;
+}

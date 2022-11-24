@@ -1,4 +1,4 @@
-export enum Type {
+export enum PomodoroActivity {
     work, 
     rest, 
 }
@@ -6,8 +6,12 @@ export enum Type {
 export const workDurationSec = 10;//25*60; 
 export const restDurationSec = 5;//5*60; 
 
-export class State {
-    constructor(readonly type: Type, readonly secondsLeft: number) {}
+export class PomodoroState {
+    constructor(
+        readonly type: PomodoroActivity, 
+        readonly secondsLeft: number,
+        readonly isPaused: boolean,
+    ) {}
 }
 
 class PomodoroBLoC {
