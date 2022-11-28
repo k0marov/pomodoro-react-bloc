@@ -10,6 +10,7 @@ export class Bloc<S> {
         this._state = initial;
 
         this.emit = this.emit.bind(this);
+        this.dispose = this.dispose.bind(this);
     }
 
     dispose() {

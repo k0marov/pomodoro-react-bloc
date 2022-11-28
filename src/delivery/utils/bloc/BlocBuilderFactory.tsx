@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Bloc } from '../../../domain/state/PomodoroBloc';
+import { Bloc } from './Bloc';
 
 export enum ConnectionState {
   none,

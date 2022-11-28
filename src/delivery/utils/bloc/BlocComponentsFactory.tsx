@@ -1,4 +1,4 @@
-import { Bloc } from "../../domain/state/PomodoroBloc";
+import { Bloc } from "./Bloc";
 import BlocBuilderFactory from "./BlocBuilderFactory";
 import { createContext } from "react";
 import BlocProviderFactory from "./BlocProviderFactory";
