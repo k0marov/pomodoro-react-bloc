@@ -1,6 +1,6 @@
 import React from 'react';
-import PomodoroBloc, { LoadedState, PomodoroActivity, PomodoroState } from "../../../domain/state/PomodoroBloc";
-import { AsyncSnapshot } from "../../utils/BlocBuilderFactory";
+import PomodoroBloc, { PomodoroActivity, PomodoroState } from "../../../domain/state/PomodoroBloc";
+import { AsyncSnapshot } from "../../utils/bloc/BlocBuilderFactory";
 import "./Pomodoro.css";
 import { PomodoroBuilder } from "./PomodoroContainer";
 
